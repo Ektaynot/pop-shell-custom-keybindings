@@ -15,10 +15,10 @@
 
 
 # First Let's name our vim keys to make things more readable later
-# left="h"
-# down="j"
-# up="k"
-# right="l"
+left="h"
+down="j"
+up="k"
+right="l"
 
 # Define the dconf branches
 KEYS_GNOME_WM=/org/gnome/desktop/wm/keybindings
@@ -67,7 +67,10 @@ dconf write ${KEYS_GNOME_WM}/move-to-workspace-right "['<Shift><Super>Right']"
  dconf write ${KEYS_GNOME_WM}/switch-to-workspace-up "['<Super>Up']"
  dconf write ${KEYS_GNOME_WM}/move-to-workspace-down "['<Shift><Super>Down']"
  dconf write ${KEYS_GNOME_WM}/move-to-workspace-up "['<Shift><Super>Up']"
-
+ dconf write ${KEYS_POP}/tile-swap-left "['<Primary>Left', '<Primary>${left}']"
+ dconf write ${KEYS_POP}/tile-swap-right "['<Primary>Right', '<Primary>${right}']"
+ dconf write ${KEYS_POP}/tile-swap-up "['<Primary>Up', '<Primary>${up}']"
+ dconf write ${KEYS_POP}/tile-swap-down "['<Primary>Down', '<Primary>${down}']"
 ######################################
 #                                    #
 # Change Pop!_shell default bindings #
@@ -78,6 +81,8 @@ dconf write ${KEYS_GNOME_WM}/move-to-workspace-right "['<Shift><Super>Right']"
 dconf write ${KEYS_GNOME_WM}/toggle-fullscreen "['<Super>F11']"
 # Toggle maximization state
 dconf write ${KEYS_GNOME_WM}/toggle-maximized "['<Super>m']"
+# Toggle fullscreen state
+dconf write ${KEYS_GNOME_WM}/minimize "['<Super>h']"
 # Toggle floating window
 dconf write ${KEYS_POP}/toggle-floating "['<Shift><Super>f']"
 
