@@ -15,10 +15,10 @@
 
 
 # First Let's name our vim keys to make things more readable later
-left="h"
-down="j"
-up="k"
-right="l"
+# left="h"
+# down="j"
+# up="k"
+# right="l"
 
 # Define the dconf branches
 KEYS_GNOME_WM=/org/gnome/desktop/wm/keybindings
@@ -51,28 +51,6 @@ dconf write ${KEYS_GNOME_WM}/minimize "@as []"
 #                         #
 ###########################
 
-# Enable switch-to-workspace with <Super>number
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-1 "['<Super>1']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-2 "['<Super>2']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-3 "['<Super>3']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-4 "['<Super>4']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-5 "['<Super>5']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-6 "['<Super>6']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-7 "['<Super>7']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-8 "['<Super>8']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-9 "['<Super>9']"
-dconf write ${KEYS_GNOME_SHELL}/switch-to-workspace-10 "['<Super>0']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-1 "['<Super>1']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-2 "['<Super>2']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-3 "['<Super>3']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-4 "['<Super>4']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-5 "['<Super>5']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-6 "['<Super>6']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-7 "['<Super>7']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-8 "['<Super>8']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-9 "['<Super>9']"
-dconf write ${KEYS_GNOME_WM}/switch-to-workspace-10 "['<Super>0']"
-
 # Switch between workspaces
 # Note these will only work with the horizontal workspaces extension
 # dconf write ${KEYS_GNOME_WM}/switch-to-workspace-left "['<Shift><Super>Tab']"
@@ -81,14 +59,14 @@ dconf write ${KEYS_GNOME_WM}/switch-to-workspace-10 "['<Super>0']"
 # dconf write ${KEYS_GNOME_WM}/move-to-workspace-left "['<Shift><Super>Left','<Shift><Super>${left}']"
 #.dconf write ${KEYS_GNOME_WM}/move-to-workspace-right "['<Shift><Super>Right','<Shift><Super>${right}']"
 # Move between monitors
-dconf write ${KEYS_GNOME_WM}/move-to-monitor-left "['<Alt><Super>Left','<Alt><Super>${left}']"
-dconf write ${KEYS_GNOME_WM}/move-to-monitor-right "['<Alt><Super>Right','<Alt><Super>${right}']"
+dconf write ${KEYS_GNOME_WM}/move-to-workspace-left "['<Shift><Super>Left']"
+dconf write ${KEYS_GNOME_WM}/move-to-workspace-right "['<Shift><Super>Right']"
 
 # These are for default Ubuntu vertical workspaces
- dconf write ${KEYS_GNOME_WM}/switch-to-workspace-down "['<Super>Tab']"
- dconf write ${KEYS_GNOME_WM}/switch-to-workspace-up "['<Shift><Super>Tab']"
- dconf write ${KEYS_GNOME_WM}/move-to-workspace-down "['<Shift><Super>Down','<Shift><Super>${down}']"
- dconf write ${KEYS_GNOME_WM}/move-to-workspace-up "['<Shift><Super>Up','<Shift><Super>${up}']"
+ dconf write ${KEYS_GNOME_WM}/switch-to-workspace-down "['<Super>Down']"
+ dconf write ${KEYS_GNOME_WM}/switch-to-workspace-up "['<Super>Up']"
+ dconf write ${KEYS_GNOME_WM}/move-to-workspace-down "['<Shift><Super>Down']"
+ dconf write ${KEYS_GNOME_WM}/move-to-workspace-up "['<Shift><Super>Up']"
 
 ######################################
 #                                    #
@@ -96,8 +74,10 @@ dconf write ${KEYS_GNOME_WM}/move-to-monitor-right "['<Alt><Super>Right','<Alt><
 #                                    #
 ######################################
 
+# Toggle fullscreen state
+dconf write ${KEYS_GNOME_WM}/toggle-fullscreen "['<Super>F11']"
 # Toggle maximization state
-dconf write ${KEYS_GNOME_WM}/toggle-maximized "['<Super>f']"
+dconf write ${KEYS_GNOME_WM}/toggle-maximized "['<Super>m']"
 # Toggle floating window
 dconf write ${KEYS_POP}/toggle-floating "['<Shift><Super>f']"
 
@@ -105,24 +85,24 @@ dconf write ${KEYS_POP}/toggle-floating "['<Shift><Super>f']"
 # Tile Adjustment mode keybindings #
 #
 # Enter/Exit tile adjustment mode
-dconf write ${KEYS_POP}/tile-enter "['<Super>r']"
+dconf write ${KEYS_POP}/tile-enter "['<Super>Return']"
 dconf write ${KEYS_POP}/tile-accept "['Return']"
 dconf write ${KEYS_POP}/tile-reject "['Escape']"
 # Move tiles
-dconf write ${KEYS_POP}/tile-move-left "['<Shift>Left', '<Shift>${left}']"
-dconf write ${KEYS_POP}/tile-move-right "['<Shift>Right', '<Shift>${right}']"
-dconf write ${KEYS_POP}/tile-move-up "['<Shift>Up', '<Shift>${up}']"
-dconf write ${KEYS_POP}/tile-move-down "['<Shift>Down', '<Shift>${down}']"
+dconf write ${KEYS_POP}/tile-move-left "['Left']"
+dconf write ${KEYS_POP}/tile-move-right "['Right']"
+dconf write ${KEYS_POP}/tile-move-up "['Up']"
+dconf write ${KEYS_POP}/tile-move-down "['Down']"
 # Resize Tiles
-dconf write ${KEYS_POP}/tile-resize-left "['Left', '${left}']"
-dconf write ${KEYS_POP}/tile-resize-right "['Right', '${right}']"
-dconf write ${KEYS_POP}/tile-resize-up "['Up', '${up}']"
-dconf write ${KEYS_POP}/tile-resize-down "['Down', '${down}']"
+dconf write ${KEYS_POP}/tile-resize-left "['<Shift>Left']"
+dconf write ${KEYS_POP}/tile-resize-right "['<Shift>Right']"
+dconf write ${KEYS_POP}/tile-resize-up "['<Shift>Up']"
+dconf write ${KEYS_POP}/tile-resize-down "['<Shift>Down']"
 # Select tiles
-dconf write ${KEYS_POP}/tile-swap-left "['<Primary>Left', '<Primary>${left}']"
-dconf write ${KEYS_POP}/tile-swap-right "['<Primary>Right', '<Primary>${right}']"
-dconf write ${KEYS_POP}/tile-swap-up "['<Primary>Up', '<Primary>${up}']"
-dconf write ${KEYS_POP}/tile-swap-down "['<Primary>Down', '<Primary>${down}']"
+# dconf write ${KEYS_POP}/tile-swap-left "['<Primary>Left', '<Primary>${left}']"
+# dconf write ${KEYS_POP}/tile-swap-right "['<Primary>Right', '<Primary>${right}']"
+# dconf write ${KEYS_POP}/tile-swap-up "['<Primary>Up', '<Primary>${up}']"
+# dconf write ${KEYS_POP}/tile-swap-down "['<Primary>Down', '<Primary>${down}']"
 #
 #  end of tile adjustment mode bindings #
 #########################################
@@ -131,15 +111,13 @@ dconf write ${KEYS_POP}/show-title "false"
 
 # Various bindings and launchers
 # Lock screen
-dconf write ${KEYS_MEDIA}/screensaver "['<Super>Escape']"
-# Open Files
-dconf write ${KEYS_MEDIA}/home "['<Shift><Super>n']"
+dconf write ${KEYS_MEDIA}/screensaver "['<Super>l']"
 # Launch email client
 dconf write ${KEYS_MEDIA}/email "['<Super>e']"
 # Launch terminal
-dconf write ${KEYS_MEDIA}/terminal "['<Super>Return']"
+dconf write ${KEYS_MEDIA}/terminal "['<Super>t']"
 # Launch web browser
-dconf write ${KEYS_MEDIA}/www "['<Shift><Super>Return']"
+dconf write ${KEYS_MEDIA}/www "['<Super>w']"
 # Close Window
 dconf write ${KEYS_GNOME_WM}/close "['<Super>q']"
 
